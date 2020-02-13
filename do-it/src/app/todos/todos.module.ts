@@ -8,6 +8,8 @@ import { CommonModule } from '@angular/common';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import { CountDonePipe } from './count-done.pipe';
 import { ClickOutsideDirective } from './clickOutsideDirective';
+import { SharedModule } from '../shared/shared.module';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,7 @@ import { ClickOutsideDirective } from './clickOutsideDirective';
     CountDonePipe,
     ClickOutsideDirective,
   ],
+  providers: [HttpClient],
   imports: [
     CardModule,
     InplaceModule,
@@ -23,6 +26,7 @@ import { ClickOutsideDirective } from './clickOutsideDirective';
     FormsModule,
     CommonModule,
     ReactiveFormsModule,
+    SharedModule,
   ],
   exports: [TodoMainComponent],
 })

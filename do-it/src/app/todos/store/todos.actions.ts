@@ -7,10 +7,17 @@ export const REMOVE_TODO = '[Todos] Remove Todo';
 export const EDIT_TODO = '[Todos] Edit Todo';
 export const TOGGLE_DONE = '[Todos] Toggle Done';
 export const CLEAR_COMPLETED = '[Todos] Clear Completed';
+export const SET_TODOS = '[Todos] Set Todos';
 
 export interface TodoAction extends Action {
   payload?: Todo;
   id?: string;
+}
+
+export class SetTodos implements Action {
+  readonly type = SET_TODOS;
+
+  constructor(public payload: Todo[]) {}
 }
 
 export class FetchTodos implements Action {

@@ -6,7 +6,13 @@
   </div>
 
   <div class="ui-toolbar-group-right">
-
-    <button  pButton type="button" label="Logout" class="ui-button" (click)="onLogout()"></button>
+    <button
+      *ngIf="isAuthenticated"
+      pButton
+      type="button"
+      label="Logout"
+      class="ui-button"
+      (click)="onLogout()"
+    ></button>
   </div>
 </p-toolbar>

@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {Todo} from '../../shared/interfaces/todo.interface';
-import {Observable} from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Todo } from '../../shared/interfaces/todo.interface';
+import { Observable, Subscription } from 'rxjs';
 import * as fromApp from '../store/app.reducer';
 import * as todosActions from './store/todos.actions';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-todo-main',
@@ -11,34 +12,36 @@ import * as todosActions from './store/todos.actions';
   styleUrls: ['./todo-main.component.scss'],
 })
 export class TodoMainComponent implements OnInit {
-  todos: Observable<{ todos: Todo[] }>;
+  todos: Todo[];
 
   unCompleted: any;
 
-  constructor(private store: Store<fromApp.AppState>) {
-  }
+  constructor(private store: Store<fromApp.AppState>) {}
+
+  subscription: Subscription;
 
   ngOnInit() {
-    this.todos = this.store.select('todos');
-
-
-    this.store
+    this.store.dispatch(new todosActions.FetchTodos());
+    this.subscription = this.store
       .select('todos')
-      .subscribe(res => (this.unCompleted = res.todos.length));
+      .pipe(map(todosState => todosState.todos))
+      .subscribe((todos: Todo[]) => {
+        this.todos = todos;
+      });
   }
 
   onToggleDone(id: number) {
     console.log('id', id);
-    this.store.dispatch(new todosActions.ToggleDone({id}));
+    this.store.dispatch(new todosActions.ToggleDone({ id }));
   }
 
   onDelete(id: number) {
-    this.store.dispatch(new todosActions.RemoveTodo({id}));
+    this.store.dispatch(new todosActions.RemoveTodo({ id }));
   }
 
   onSubmit(f) {
     console.log('f', f);
-    if (f.value['new-todo'] === ''|| f.value['new-todo'] === null) {
+    if (f.value['new-todo'] === '' || f.value['new-todo'] === null) {
       return;
     }
     console.log(f.value);
