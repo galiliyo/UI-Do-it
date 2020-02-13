@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": "11",
+      "email": "test1@test.com"
+    },
+    {
+      "id": "12",
+      "email": "test2@test.com"
+    },
+    {
+      "email": "test@test.com",
+      "password": "$2a$10$k9ws5JGpeeVqU7vh0/kQ3uZGPQmC2UdemNVD6TSp.GJ3CKGt7qeDe",
+      "id": "WFLGTD4"
+    }
+  ],
+  "todos": [
+    {
+      "todo": "Buy Milk",
+      "isDone": true,
+      "id": 10001
+    },
+    {
+      "todo": "Keep Calm",
+      "isDone": false,
+      "id": 10002
+    },
+    {
+      "todo": "Learn Angular",
+      "isDone": true,
+      "id": 10003
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<div class="login">
+  <div class="login__card">
+    <p-card class="">
+      <form novalidate [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"
+          ><i class="pi pi-envelope" style="line-height: 1.25;"></i
+          ></span>
+          <input type="text" pInputText formControlName="email"  required/>
+        </div>
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"
+          ><i class="pi pi-lock" style="line-height: 1.25;"></i
+          ></span>
+          <input type="password" pPassword formControlName="password" required/>
+        </div>
+        <div class="login__card__btn-container">
+          <button
+            pButton
+            label="Login"
+          ></button>
+        </div>
+      </form>
+    </p-card>
+  </div>
+
+

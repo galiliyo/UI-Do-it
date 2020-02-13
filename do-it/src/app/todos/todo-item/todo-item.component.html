@@ -1,0 +1,35 @@
+<div class="todo-item"   clickOutside
+     (clickOutside)="onSubmitEdit(item.id)"
+     [ngClass]="item.isDone ? 'todo-item--done ' : ''">
+  <div class="todo-item__title" (click)="onToggleDone(item.id)">
+    <form (ngSubmit)="onSubmitEdit(item.id)">
+      <input
+        type="text"
+        class="todo-item__title__input"
+        name="editedTodo"
+        #inputEl
+        [ngClass]="inputStyle"
+        [value]="item.todo"
+        [formControl]="editedTodo"
+        [readonly]="!inEditMode"
+
+      />
+    </form>
+  </div>
+  <div class="todo-item__controls">
+    <div class="todo-item__controls__edit">
+      <i class="pi pi-pencil" *ngIf="!item.isDone" (click)="onEdit()"></i>
+    </div>
+    <div
+      class="todo-item__controls__delete"
+      (click)="deleteHandler.emit(item.id)"
+    >
+      <i class="pi pi-times"></i>
+    </div>
+  </div>
+</div>
+
+<!--    <div *ngIf="!inEditMode" class="todo-item__title&#45;&#45;display">-->
+<!--      {{ item.todo }}-->
+<!--    </div>-->
+<!--        [appMyAutofocus]="inEditMode"-->

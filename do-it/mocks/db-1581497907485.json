@@ -1,0 +1,26 @@
+{
+  "login": {
+    "password": "bestPassword",
+    "email": "test1@test.com",
+    "userId": "Nma0UserId023",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWRJbkFzIjoiYWRtaW4iLCJpYXQiOjE0MjI3Nzk2Mzh9.gzSraSYS8EXBxLN_oWnFSRgCzcmJmMjLiuyu5CSpyHI",
+    "expirationDate": 1581503703736
+  },
+  "todos": [
+    {
+      "todo": "Buy Milk",
+      "isDone": true,
+      "id": 10001
+    },
+    {
+      "todo": "Keep Calm",
+      "isDone": false,
+      "id": 10002
+    },
+    {
+      "todo": "Learn Angular",
+      "isDone": true,
+      "id": 10003
+    }
+  ]
+}

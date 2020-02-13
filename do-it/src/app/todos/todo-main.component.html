@@ -1,0 +1,40 @@
+<div class="todo">
+  <div class="todo__main">
+    <div class="todo__main__app-title">Todos:</div>
+    <div class="todo__main__todos-card"
+         clickOutside
+         (clickOutside)="onSubmit(f)" >
+      <form novalidate #f="ngForm"  (ngSubmit)="onSubmit(f)">
+        <div class="form-group"></div>
+        <input
+          class="todo__main__todos-card__input form-control"
+          type="text"
+          name="new-todo"
+          placeholder="What needs to be done?"
+          ngModel
+        />
+      </form>
+      <div class="todo__main__todos-card__list">
+        <div *ngFor="let item of (todos | async).todos">
+          <app-todo-item
+            [item]="item"
+            (toggleHandler)="onToggleDone($event)"
+            (deleteHandler)="onDelete($event)"
+          >
+          </app-todo-item>
+        </div>
+      </div>
+      <div class="todo__main__todos-card__footer">
+        <div class="todo__main__todos-card__footer__counter">
+          {{ todos | async | countDone }} out of {{ unCompleted }}
+        </div>
+        <div
+          class="todo__main__todos-card__footer__clear"
+          (click)="onClearCompleted()"
+        >
+          Clear Completed
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
