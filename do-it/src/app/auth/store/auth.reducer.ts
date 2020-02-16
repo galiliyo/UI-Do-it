@@ -19,9 +19,9 @@ export function authReducer(
 
   switch (action.type) {
     case AuthActions.AUTHENTICATE_SUCCESS:
-      console.log('success');
+
       const user = new UserModel(
-        action.payload.userId,
+        action.payload.userName,
         action.payload.token,
       );
       return {

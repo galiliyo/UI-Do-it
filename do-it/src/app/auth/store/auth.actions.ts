@@ -12,11 +12,11 @@ export class AuthenticateSuccess implements Action {
   readonly type = AUTHENTICATE_SUCCESS;
   constructor(
     public payload: {
-      userId: string;
+      userName: string;
       token: string;
     }
   ) {
-    console.log('AUTHENTICATE_SUCCESS created');}
+  }
 }
 
 export class Logout implements Action {

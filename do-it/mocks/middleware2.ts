@@ -19,7 +19,6 @@ module.exports = (req, res, next) => {
 };
 
 const login = (req, res) => {
-  console.log('data', req.body);
   const data = req.body;
 
   if (data.email === '1' && data.password === '1') {

@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Todo } from '../../shared/interfaces/todo.interface';
 import { Observable, Subscription } from 'rxjs';
 import * as fromApp from '../store/app.reducer';
 import * as todosActions from './store/todos.actions';
 import { map } from 'rxjs/operators';
+import * as AuthActions from '../auth/store/auth.actions';
 
 @Component({
   selector: 'app-todo-main',
   templateUrl: './todo-main.component.html',
   styleUrls: ['./todo-main.component.scss'],
 })
-export class TodoMainComponent implements OnInit {
+export class TodoMainComponent implements OnInit, OnDestroy {
   todos: Todo[];
 
   unCompleted: any;
@@ -22,12 +23,17 @@ export class TodoMainComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(new todosActions.FetchTodos());
+
     this.subscription = this.store
       .select('todos')
       .pipe(map(todosState => todosState.todos))
       .subscribe((todos: Todo[]) => {
         this.todos = todos;
       });
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe()
   }
 
   onToggleDone(id: number) {
@@ -45,12 +51,11 @@ export class TodoMainComponent implements OnInit {
       return;
     }
     console.log(f.value);
-    const id = Math.floor(Math.random() * 10000);
+    // const id = Math.floor(Math.random() * 10000);
     this.store.dispatch(
       new todosActions.AddTodo({
         todo: f.value['new-todo'],
         isDone: false,
-        id,
       })
     );
     f.reset();

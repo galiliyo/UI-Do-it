@@ -5,7 +5,6 @@ const middlewares = jsonServer.defaults();
 
 server.use(middlewares);
 server.use((req, res, next) => {
-  console.log('mw started', req.url);
   if (req.url.indexOf('/login') !== -1) {
     if (isAuthorized(req)) { // add your authorization logic here
       res.send(

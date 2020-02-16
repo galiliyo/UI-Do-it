@@ -1,5 +1,5 @@
 import { Todo } from '../../../shared/interfaces/todo.interface';
-import * as todoActions from './todos.actions';
+import * as todosActions from './todos.actions';
 import { TodoAction } from './todos.actions';
 
 export interface State {
@@ -8,23 +8,29 @@ export interface State {
 
 const initState: State = {
   todos: [
-    { todo: 'Buy Milk', isDone: true, id: 10001 },
-    { todo: 'Keep Calm', isDone: false, id: 10002 },
-    { todo: 'Learn Angular', isDone: true, id: 10003 },
+    // { todo: 'Buy Milk', isDone: true, id: 10001 },
+    // { todo: 'Keep Calm', isDone: false, id: 10002 },
+    // { todo: 'Learn Angular', isDone: true, id: 10003 },
   ],
 };
 // Todo: Is this I declare types?
 
-export function todosReducer(state = initState, action: TodoAction) {
+export function todosReducer(state = initState, action: todosActions.todosActions) {
   let updatedTodos: Todo[];
 
   switch (action.type) {
-    case todoActions.ADD_TODO: {
+    case todosActions.SET_TODOS: {
+
+      updatedTodos = action.payload ;
+      break;
+    }
+
+    case todosActions.ADD_TODO_SUCCESS: {
       updatedTodos = [...state.todos, action.payload];
       break;
     }
 
-    case todoActions.REMOVE_TODO: {
+    case todosActions.REMOVE_TODO: {
       const id = action.payload.id;
       updatedTodos = state.todos.filter(currTodo => {
         return currTodo.id !== id;
@@ -32,7 +38,7 @@ export function todosReducer(state = initState, action: TodoAction) {
       break;
     }
 
-    case todoActions.EDIT_TODO: {
+    case todosActions.EDIT_TODO: {
       const id = action.payload.id;
       const idx = state.todos.findIndex(item => item.id === id);
       console.log('editing', id, idx);
@@ -41,7 +47,7 @@ export function todosReducer(state = initState, action: TodoAction) {
       break;
     }
 
-    case todoActions.TOGGLE_DONE: {
+    case todosActions.TOGGLE_DONE: {
       const id = action.payload.id;
       const idx = state.todos.findIndex(item => item.id === id);
       updatedTodos = [...state.todos];
@@ -49,7 +55,7 @@ export function todosReducer(state = initState, action: TodoAction) {
       break;
     }
 
-    case todoActions.CLEAR_COMPLETED: {
+    case todosActions.CLEAR_COMPLETED: {
       updatedTodos = [...state.todos].filter(currTodo => !currTodo.isDone);
       break;
     }

@@ -17,13 +17,13 @@ export interface AuthResponseData {
 }
 
 const handleAuthentication = (
-  userId: string,
+  userName: string,
   token: string
 ) => {
-  const user = new UserModel(userId, token);
+  const user = new UserModel(userName, token);
   localStorage.setItem('userData', JSON.stringify(user));
   return new AuthActions.AuthenticateSuccess({
-    userId: userId,
+    userName: userName,
     token: token,
 
   });
@@ -68,7 +68,7 @@ export class AuthEffects {
     }));
 
 
-  @Effect({dispatch: false})
+  // @Effect({dispatch: false})
   // authRedirect = this.actions$.pipe(
   //   ofType(AuthActions.AUTHENTICATE_SUCCESS),
   //   tap((authSuccessAction: AuthActions.AuthenticateSuccess) => {
@@ -83,7 +83,6 @@ export class AuthEffects {
   authLogout = this.actions$.pipe(
     ofType(AuthActions.LOGOUT),
     tap(() => {
-      this.authService.clearLogoutTimer();
       localStorage.removeItem('userData');
       this.router.navigate(['/']);
     })
