@@ -1,4 +1,3 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { LoginModule } from './login/login.module';
 import { TodosModule } from './todos/todos.module';
@@ -16,15 +15,16 @@ import { AuthEffects } from './auth/store/auth.effects';
 import { TodosEffects } from './todos/store/todos.effects';
 import { CoreModule } from './core.module';
 import { environment } from '../environments/environment';
+import { LoginComponent } from './login/login.component';
+import { TodoMainComponent } from './todos/todo-main.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent],
+  declarations: [LoginComponent, AppComponent, HeaderComponent],
   imports: [
-    BrowserModule,
-    SharedModule,
-    CoreModule,
-    TodosModule,
     LoginModule,
+    SharedModule,
+    TodosModule,
+    CoreModule,
     AppRoutingModule,
     StoreModule.forRoot(fromApp.appReducer),
     EffectsModule.forRoot([AuthEffects, TodosEffects]),
@@ -34,7 +34,7 @@ import { environment } from '../environments/environment';
     }),
   ],
   providers: [MessageService],
-  exports: [],
+  exports: [LoginModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -4,7 +4,7 @@ import { LoginComponent } from './login.component';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
-  declarations: [LoginComponent],
+  declarations: [],
   imports: [CommonModule, SharedModule],
 })
 export class LoginModule {}

@@ -1,11 +1,12 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Todo } from '../../shared/interfaces/todo.interface';
-import { Observable, Subscription } from 'rxjs';
+import { Todo } from '../shared/interfaces/todo.interface';
+import { Subscription } from 'rxjs';
 import * as fromApp from '../store/app.reducer';
 import * as todosActions from './store/todos.actions';
 import { map } from 'rxjs/operators';
-import * as AuthActions from '../auth/store/auth.actions';
+import { TodoService } from './todos.service';
+import { log } from 'util';
 
 @Component({
   selector: 'app-todo-main',
@@ -17,13 +18,15 @@ export class TodoMainComponent implements OnInit, OnDestroy {
 
   unCompleted: any;
 
-  constructor(private store: Store<fromApp.AppState>) {}
+  constructor(
+    private store: Store<fromApp.AppState>,
+    private todosService: TodoService
+  ) {}
 
   subscription: Subscription;
 
   ngOnInit() {
     this.store.dispatch(new todosActions.FetchTodos());
-
     this.subscription = this.store
       .select('todos')
       .pipe(map(todosState => todosState.todos))
@@ -32,17 +35,12 @@ export class TodoMainComponent implements OnInit, OnDestroy {
       });
   }
 
-  ngOnDestroy(){
-    this.subscription.unsubscribe()
-  }
-
-  onToggleDone(id: number) {
-    console.log('id', id);
-    this.store.dispatch(new todosActions.ToggleDone({ id }));
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   onDelete(id: number) {
-    this.store.dispatch(new todosActions.RemoveTodo({ id }));
+    this.store.dispatch(new todosActions.RemoveTodoReq({ id }));
   }
 
   onSubmit(f) {

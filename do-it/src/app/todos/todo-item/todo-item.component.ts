@@ -8,19 +8,20 @@ import {
   AfterViewInit,
   ViewChild,
 } from '@angular/core';
-import { Todo } from '../../../shared/interfaces/todo.interface';
+import { Todo } from '../../shared/interfaces/todo.interface';
 import { FormControl } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import * as fromApp from '../../store/app.reducer';
 import * as todosActions from '../store/todos.actions';
-import {ClickOutsideDirective} from '../clickOutsideDirective'
+import { ClickOutsideDirective } from '../../shared/directives/clickOutsideDirective';
+import { log } from 'util';
 
 @Component({
   selector: 'app-todo-item',
   templateUrl: './todo-item.component.html',
   styleUrls: ['./todo-item.component.scss'],
 })
-export class TodoItemComponent implements OnInit, AfterViewInit {
+export class TodoItemComponent implements OnInit {
   @ViewChild('inputEl', { static: false })
   inputEl: ElementRef;
 
@@ -36,9 +37,6 @@ export class TodoItemComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.editedTodo = new FormControl(this.item.todo);
   }
-  ngAfterViewInit(): void {
-    // console.log('this.inputEl', this.inputEl.nativeElement);
-  }
 
   ngDoCheck() {
     this.inputStyle = {
@@ -47,23 +45,29 @@ export class TodoItemComponent implements OnInit, AfterViewInit {
     };
   }
 
-  onToggleDone(id: string | number) {
-    if (this.inEditMode) return;
-    else {
-      this.toggleHandler.emit(id);
-    }
+  onToggleDone(id: number) {
+    console.log('onToggleDone undef', id);
+
+    this.dispatchUpdatedTodo(id, !this.item.isDone);
   }
-  onSubmitEdit(id: string | number) {
-    if(this.inEditMode) {
-      this.store.dispatch(
-          new todosActions.EditTodo({
-            todo: this.editedTodo.value,
-            isDone: false,
-            id: id,
-          })
-      );
+
+  onSubmitEdit(id: number) {
+    if (this.inEditMode) {
+      this.dispatchUpdatedTodo(id, false);
       this.inEditMode = false;
     }
+  }
+
+  private dispatchUpdatedTodo(id: number, newIsDoneStatus: boolean) {
+    console.log('dispatchUpdatedTodo undef', id);
+
+    this.store.dispatch(
+      new todosActions.EditTodo({
+        todo: this.editedTodo.value,
+        isDone: newIsDoneStatus,
+        id: id,
+      })
+    );
   }
 
   onEdit() {

@@ -18,11 +18,7 @@
       </form>
       <div class="todo__main__todos-card__list">
         <div *ngFor="let item of todos">
-          <app-todo-item
-            [item]="item"
-            (toggleHandler)="onToggleDone($event)"
-            (deleteHandler)="onDelete($event)"
-          >
+          <app-todo-item [item]="item" (deleteHandler)="onDelete($event)">
           </app-todo-item>
         </div>
       </div>

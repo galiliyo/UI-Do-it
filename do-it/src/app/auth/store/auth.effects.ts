@@ -1,42 +1,40 @@
-import {Injectable} from '@angular/core';
-import {Router} from '@angular/router';
-import {Actions, ofType, Effect} from '@ngrx/effects';
-import {switchMap, catchError, map, tap} from 'rxjs/operators';
-import {HttpClient} from '@angular/common/http';
-import {environment} from '../../../environments/environment';
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { Actions, ofType, Effect } from '@ngrx/effects';
+import { switchMap, catchError, map, tap } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 import * as AuthActions from './auth.actions';
-import {UserModel} from '../../UserModel.model';
-import {AuthService} from '../auth.service';
+import * as SharedActions from '../../store/shared.actions';
+import { UserModel } from '../../shared/models/UserModel.model';
+import { AuthService } from '../auth.service';
 
 export interface AuthResponseData {
   token: string;
   userId: string;
-  message: string,
-  status: string,
+  message: string;
+  status: string;
 }
 
-const handleAuthentication = (
-  userName: string,
-  token: string
-) => {
+const handleAuthentication = (userName: string, token: string) => {
   const user = new UserModel(userName, token);
   localStorage.setItem('userData', JSON.stringify(user));
   return new AuthActions.AuthenticateSuccess({
     userName: userName,
     token: token,
-
   });
 };
 
-const handleError = (errorMessage: string) => {
+const handleLoginError = (errorMessage: string) => {
   console.log('errorMessage', errorMessage);
-  return new AuthActions.AuthenticateFail(errorMessage ? errorMessage : 'An unknown error occurred!');
+  return new SharedActions.SetError(
+    errorMessage ? { msg: errorMessage } : { msg: 'An unknown error occurred!' }
+  );
 };
 
 @Injectable()
 export class AuthEffects {
-
   @Effect()
   authLogin = this.actions$.pipe(
     ofType(AuthActions.LOGIN_START),
@@ -46,27 +44,20 @@ export class AuthEffects {
         password: authData.payload.password,
       };
       return this.http
-        .post<AuthResponseData>(
-          environment.api + '/login',
-          body
-        )
+        .post<AuthResponseData>(environment.api + '/login', body)
         .pipe(
           map(resData => {
-              if (resData.status === 'ok') {
-                this.router.navigate(['/todos']);
-                return handleAuthentication(
-                  resData.userId,
-                  resData.token
-                );
-
-              } else {
-                console.log('status not ok', resData.message);
-                return handleError(resData.message);
-              }
+            if (resData.status === 'ok') {
+              this.router.navigate(['/todos']);
+              return handleAuthentication(resData.userId, resData.token);
+            } else {
+              console.log('status not ok', resData);
+              return handleLoginError('Wrong User or password');
             }
-          ));
-    }));
-
+          })
+        );
+    })
+  );
 
   // @Effect({dispatch: false})
   // authRedirect = this.actions$.pipe(
@@ -78,8 +69,7 @@ export class AuthEffects {
   //   })
   // );
 
-
-  @Effect({dispatch: false})
+  @Effect({ dispatch: false })
   authLogout = this.actions$.pipe(
     ofType(AuthActions.LOGOUT),
     tap(() => {
@@ -93,6 +83,5 @@ export class AuthEffects {
     private http: HttpClient,
     private router: Router,
     private authService: AuthService
-  ) {
-  }
+  ) {}
 }

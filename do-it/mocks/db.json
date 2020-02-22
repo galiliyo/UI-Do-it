@@ -1,44 +1,19 @@
 {
   "todos": [
     {
-      "todo": "Buy Milk",
-      "isDone": true,
-      "id": 10001
-    },
-    {
-      "todo": "Keep Calm",
-      "isDone": false,
-      "id": 10002
-    },
-    {
-      "todo": "Learn Angular",
+      "todo": "asdasd",
       "isDone": true,
       "id": 10003
     },
     {
-      "todo": "fix Pig",
-      "isDone": true,
+      "todo": "buy milk",
+      "isDone": false,
       "id": 10005
     },
     {
-      "todo": "finish this shoit",
+      "todo": "eat dinner",
       "isDone": false,
-      "id": 10007
-    },
-    {
-      "todo": "lala",
-      "isDone": false,
-      "id": 10008
-    },
-    {
-      "todo": "asdasd",
-      "isDone": false,
-      "id": 10009
-    },
-    {
-      "todo": "dddd",
-      "isDone": false,
-      "id": 10011
+      "id": 10006
     }
   ],
   "test": [

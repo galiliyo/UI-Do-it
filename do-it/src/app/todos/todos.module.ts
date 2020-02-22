@@ -6,10 +6,11 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TodoItemComponent } from './todo-item/todo-item.component';
-import { CountDonePipe } from './count-done.pipe';
-import { ClickOutsideDirective } from './clickOutsideDirective';
+import { CountDonePipe } from '../shared/pipes/count-done.pipe';
+import { ClickOutsideDirective } from '../shared/directives/clickOutsideDirective';
 import { SharedModule } from '../shared/shared.module';
 import { HttpClient } from '@angular/common/http';
+import { TodoService } from './todos.service';
 
 @NgModule({
   declarations: [
@@ -18,15 +19,15 @@ import { HttpClient } from '@angular/common/http';
     CountDonePipe,
     ClickOutsideDirective,
   ],
-  providers: [HttpClient],
+  providers: [HttpClient, TodoService],
   imports: [
     CardModule,
     InplaceModule,
     InputTextModule,
     FormsModule,
     CommonModule,
-    ReactiveFormsModule,
     SharedModule,
+    ReactiveFormsModule,
   ],
   exports: [TodoMainComponent],
 })
