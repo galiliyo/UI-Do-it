@@ -4,13 +4,11 @@ import { log } from 'util';
 export interface State {
   httpCounter: number;
   error: string;
-  loading: boolean;
 }
 
 const initState: State = {
   httpCounter: 0,
   error: null,
-  loading: false,
 };
 
 export function sharedReducer(
@@ -19,18 +17,16 @@ export function sharedReducer(
 ) {
   switch (action.type) {
     case SharedActions.INCREMENT_HTTP_COUNT:
-      console.log('inc action');
       return {
         ...state,
         httpCounter: ++state.httpCounter,
-        loading: state.httpCounter != 0,
+        loading: state.httpCounter,
       };
     case SharedActions.DECREMENT_HTTP_COUNT:
-      console.log('dec action');
       return {
         ...state,
         httpCounter: --state.httpCounter,
-        loading: state.httpCounter != 0,
+        loading: state.httpCounter,
       };
     case SharedActions.SET_ERROR:
       log('set error in reducer');

@@ -15,8 +15,7 @@ export class AuthenticateSuccess implements Action {
       userName: string;
       token: string;
     }
-  ) {
-  }
+  ) {}
 }
 
 export class Logout implements Action {
@@ -32,9 +31,7 @@ export class LoginStart implements Action {
 export class AuthenticateFail implements Action {
   readonly type = AUTHENTICATE_FAIL;
 
-  constructor(public payload: string) {
-    console.log('payload', payload);
-  }
+  constructor(public payload: string) {}
 }
 
 export class SignupStart implements Action {
@@ -43,18 +40,8 @@ export class SignupStart implements Action {
   constructor(public payload: { email: string; password: string }) {}
 }
 
-export class ClearError implements Action {
-  readonly type = CLEAR_ERROR;
-}
-
-export class AutoLogin implements Action {
-  readonly type = AUTO_LOGIN;
-}
-
 export type AuthActions =
   | AuthenticateSuccess
   | Logout
   | LoginStart
-  | AuthenticateFail
-  | ClearError
-  | AutoLogin;
+  | AuthenticateFail;

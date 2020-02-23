@@ -15,11 +15,38 @@ import * as fromApp from '../../store/app.reducer';
 import * as todosActions from '../store/todos.actions';
 import { ClickOutsideDirective } from '../../shared/directives/clickOutsideDirective';
 import { log } from 'util';
+import {
+  animate,
+  state,
+  style,
+  transition,
+  trigger,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-todo-item',
   templateUrl: './todo-item.component.html',
   styleUrls: ['./todo-item.component.scss'],
+  animations: [
+    trigger('divState', [
+      state(
+        'out',
+        style({
+          transform: 'translateY(-60px)',
+          opacity: '0',
+        })
+      ),
+      state(
+        'in',
+        style({
+          opacity: '1',
+          transform: 'translateY(0px)',
+        })
+      ),
+      transition('out=>in', animate(500)),
+      transition('in=>out', animate(500)),
+    ]),
+  ],
 })
 export class TodoItemComponent implements OnInit {
   @ViewChild('inputEl', { static: false })
@@ -32,12 +59,15 @@ export class TodoItemComponent implements OnInit {
   private inEditMode: boolean = false;
   private editedTodo: FormControl;
   inputStyle: object;
+  state: string = 'out';
 
   constructor(private el: ElementRef, private store: Store<fromApp.AppState>) {}
   ngOnInit(): void {
     this.editedTodo = new FormControl(this.item.todo);
   }
-
+  ngAfterViewInit() {
+    this.state = 'in';
+  }
   ngDoCheck() {
     this.inputStyle = {
       'todo-item__title__input--done': this.item.isDone,
@@ -46,8 +76,6 @@ export class TodoItemComponent implements OnInit {
   }
 
   onToggleDone(id: number) {
-    console.log('onToggleDone undef', id);
-
     this.dispatchUpdatedTodo(id, !this.item.isDone);
   }
 
@@ -59,8 +87,6 @@ export class TodoItemComponent implements OnInit {
   }
 
   private dispatchUpdatedTodo(id: number, newIsDoneStatus: boolean) {
-    console.log('dispatchUpdatedTodo undef', id);
-
     this.store.dispatch(
       new todosActions.EditTodo({
         todo: this.editedTodo.value,

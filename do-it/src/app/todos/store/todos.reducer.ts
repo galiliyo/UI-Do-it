@@ -45,7 +45,6 @@ export function todosReducer(
 
     // case todosActions.EDIT_TODO:
     case todosActions.EDIT_TODO_SUCCESS: {
-      console.log('edit', action.payload);
       const id = action.payload.id;
       const idx = state.todos.findIndex(item => item.id === id);
       updatedTodos = [...state.todos];

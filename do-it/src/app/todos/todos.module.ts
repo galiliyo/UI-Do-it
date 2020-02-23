@@ -11,6 +11,15 @@ import { ClickOutsideDirective } from '../shared/directives/clickOutsideDirectiv
 import { SharedModule } from '../shared/shared.module';
 import { HttpClient } from '@angular/common/http';
 import { TodoService } from './todos.service';
+import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from '../login/login.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: TodoMainComponent,
+  },
+];
 
 @NgModule({
   declarations: [
@@ -25,10 +34,12 @@ import { TodoService } from './todos.service';
     InplaceModule,
     InputTextModule,
     FormsModule,
+    ReactiveFormsModule,
     CommonModule,
     SharedModule,
-    ReactiveFormsModule,
+    RouterModule.forChild(routes),
   ],
-  exports: [TodoMainComponent],
+
+  exports: [RouterModule],
 })
 export class TodosModule {}

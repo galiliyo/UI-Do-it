@@ -12,9 +12,7 @@ import { log } from 'util';
 export class TodoService {
   private todos: Todo[] = [];
 
-  constructor(private store: Store<fromApp.AppState>) {
-    console.log('getDoneTodos()', this.getDoneTodos());
-  }
+  constructor(private store: Store<fromApp.AppState>) {}
 
   //   getDoneTodos() {
   //     return this.store

@@ -7,6 +7,7 @@ import * as todosActions from './store/todos.actions';
 import { map } from 'rxjs/operators';
 import { TodoService } from './todos.service';
 import { log } from 'util';
+import { state, style, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-todo-main',
@@ -26,12 +27,13 @@ export class TodoMainComponent implements OnInit, OnDestroy {
   subscription: Subscription;
 
   ngOnInit() {
-    this.store.dispatch(new todosActions.FetchTodos());
+    // this.store.dispatch(new todosActions.FetchTodos());
     this.subscription = this.store
       .select('todos')
       .pipe(map(todosState => todosState.todos))
       .subscribe((todos: Todo[]) => {
         this.todos = todos;
+        this.unCompleted = this.todos.length;
       });
   }
 
@@ -44,12 +46,9 @@ export class TodoMainComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(f) {
-    console.log('f', f);
     if (f.value['new-todo'] === '' || f.value['new-todo'] === null) {
       return;
     }
-    console.log(f.value);
-    // const id = Math.floor(Math.random() * 10000);
     this.store.dispatch(
       new todosActions.AddTodo({
         todo: f.value['new-todo'],

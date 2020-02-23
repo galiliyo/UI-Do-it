@@ -2,40 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca348256-fac3-40a3-8e2e-8f612b536bdd" name="Default Changelist" comment="lazy loading messed up">
-      <change afterPath="$PROJECT_DIR$/do-it/src/app/store/shared.actions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/do-it/src/app/store/shared.reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/do-it/mocks/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/mocks/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/do-it/mocks/middleware2.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/mocks/middleware2.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/do-it/src/app/UserModel.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/shared/models/UserModel.model.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/do-it/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/app-routing.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/do-it/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/app.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/do-it/src/app/app.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/app.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/do-it/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/app.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/do-it/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/do-it/src/app/app.resolver.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/app.resolver.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/do-it/src/app/auth/auth-interceptor.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/auth/auth-interceptor.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/do-it/src/app/auth.gurds.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/auth.gurds.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/do-it/src/app/auth/store/auth.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/auth/store/auth.actions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/do-it/src/app/auth/store/auth.effects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/auth/store/auth.effects.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/do-it/src/app/auth/store/auth.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/auth/store/auth.reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/do-it/src/app/core.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/core.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/do-it/src/app/login/login.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/login/login.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/do-it/src/app/shared/directives/clickOutsideDirective.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/shared/directives/clickOutsideDirective.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/do-it/src/app/shared/models/UserModel.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/shared/models/UserModel.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/do-it/src/app/shared/pipes/count-done.pipe.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/shared/pipes/count-done.pipe.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/do-it/src/app/shared/pipes/count-done.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/shared/pipes/count-done.pipe.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/do-it/src/app/shared/shared.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/shared/shared.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/do-it/src/app/store/app.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/store/app.reducer.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/do-it/src/app/todos/clickOutsideDirective.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/shared/directives/clickOutsideDirective.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/do-it/src/app/todos/count-done.pipe.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/shared/pipes/count-done.pipe.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/do-it/src/app/todos/count-done.pipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/shared/pipes/count-done.pipe.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/do-it/src/app/todos/store/todos.actions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/todos/store/todos.actions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/do-it/src/app/store/shared.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/store/shared.reducer.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/do-it/src/app/todos/store/todos.effects.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/todos/store/todos.effects.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/do-it/src/app/todos/store/todos.reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/todos/store/todos.reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/do-it/src/app/todos/todo-item/todo-item.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/todos/todo-item/todo-item.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/do-it/src/app/todos/todo-item/todo-item.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/todos/todo-item/todo-item.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/do-it/src/app/todos/todo-main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/todos/todo-main.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/do-it/src/app/todos/todo-main.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/todos/todo-main.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/do-it/src/app/todos/todo-main.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/todos/todo-main.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/do-it/src/app/todos/todos.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/todos/todos.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/do-it/src/app/todos/todos.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/todos/todos.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/do-it/src/shared/interfaces/todo.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/app/shared/interfaces/todo.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/do-it/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/do-it/src/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +45,13 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/galiliyo/UI-Do-it.git" />
+      </set>
+    </option>
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -92,7 +91,7 @@
       <recent name="C:\Users\yonathang\Documents\WebstormProjects\do-it\do-it\src\app" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.json:server:middlewares">
     <configuration name="json:server" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/do-it/package.json" />
       <command value="run" />
@@ -135,8 +134,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
         <item itemvalue="npm.json:server:middlewares" />
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.json:server" />
         <item itemvalue="npm.json:server:auth" />
         <item itemvalue="npm.start" />
@@ -178,6 +177,8 @@
       <workItem from="1581851255181" duration="22504000" />
       <workItem from="1582052546998" duration="10062000" />
       <workItem from="1582359612303" duration="23357000" />
+      <workItem from="1582440970759" duration="24000" />
+      <workItem from="1582445387949" duration="8206000" />
     </task>
     <task id="LOCAL-00001" summary="testing if this file is added">
       <created>1581247520638</created>
@@ -193,7 +194,7 @@
       <option name="project" value="LOCAL" />
       <updated>1581349185989</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,11 +237,12 @@
       <screen x="1366" y="0" width="1920" height="1160" />
     </state>
     <state x="2056" y="328" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728/1366.0.1920.1160@1366.0.1920.1160" timestamp="1581331798647" />
-    <state x="1952" y="128" key="CommitChangelistDialog2" timestamp="1582393450037">
-      <screen x="1366" y="0" width="1920" height="1160" />
+    <state x="586" y="128" key="CommitChangelistDialog2" timestamp="1582459261059">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="-1337" y="-334" key="CommitChangelistDialog2/-1920.-422.1920.1160/0.0.1366.728@-1920.-422.1920.1160" timestamp="1581247519905" />
     <state x="1952" y="128" key="CommitChangelistDialog2/0.0.1366.728/1366.0.1920.1160@1366.0.1920.1160" timestamp="1582393450037" />
+    <state x="586" y="128" key="CommitChangelistDialog2/0.0.1920.1160/-1366.640.1366.728@0.0.1920.1160" timestamp="1582459261059" />
     <state x="1987" y="327" width="923" height="669" key="EditFileWatcherDialog" timestamp="1581010073069">
       <screen x="1366" y="0" width="1920" height="1160" />
     </state>
@@ -252,48 +254,48 @@
     <state x="1913" y="542" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1160@1366.0.1920.1160" timestamp="1582380023396" />
     <state x="887" y="354" key="FileChooserDialogImpl/0.0.1920.1160/-1366.640.1366.728@0.0.1920.1160" timestamp="1581590776140" />
     <state x="740" y="336" key="FileChooserDialogImpl/3840.425.1366.728/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1580978663749" />
-    <state width="1899" height="246" key="GridCell.Tab.0.bottom" timestamp="1582393608643">
-      <screen x="1366" y="0" width="1920" height="1160" />
+    <state width="1432" height="226" key="GridCell.Tab.0.bottom" timestamp="1582459261132">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1899" height="301" key="GridCell.Tab.0.bottom/-1920.-422.1920.1160/0.0.1366.728@-1920.-422.1920.1160" timestamp="1581252975907" />
     <state width="980" height="229" key="GridCell.Tab.0.bottom/0.0.1200.1880/-1366.1415.1366.728/1200.559.1920.1160@0.0.1200.1880" timestamp="1580991074037" />
     <state width="1921" height="308" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1160@0.0.1366.728" timestamp="1581788195942" />
-    <state width="1899" height="246" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1160@1366.0.1920.1160" timestamp="1582393608643" />
-    <state width="1022" height="138" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582100906598" />
-    <state width="1022" height="138" key="GridCell.Tab.0.bottom/0.0.1920.1160/-1366.640.1366.728@0.0.1920.1160" timestamp="1582108052144" />
+    <state width="1899" height="246" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1160@1366.0.1920.1160" timestamp="1582397060541" />
+    <state width="1345" height="246" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1582440948531" />
+    <state width="1432" height="226" key="GridCell.Tab.0.bottom/0.0.1920.1160/-1366.640.1366.728@0.0.1920.1160" timestamp="1582459261132" />
     <state width="1899" height="174" key="GridCell.Tab.0.bottom/0.0.1920.1160/1920.0.1366.728@0.0.1920.1160" timestamp="1580983143489" />
     <state width="1899" height="222" key="GridCell.Tab.0.bottom/3840.425.1366.728/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1580981558893" />
-    <state width="1899" height="246" key="GridCell.Tab.0.center" timestamp="1582393608643">
-      <screen x="1366" y="0" width="1920" height="1160" />
+    <state width="1432" height="226" key="GridCell.Tab.0.center" timestamp="1582459261121">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1899" height="301" key="GridCell.Tab.0.center/-1920.-422.1920.1160/0.0.1366.728@-1920.-422.1920.1160" timestamp="1581252975907" />
     <state width="980" height="229" key="GridCell.Tab.0.center/0.0.1200.1880/-1366.1415.1366.728/1200.559.1920.1160@0.0.1200.1880" timestamp="1580991074037" />
     <state width="1921" height="308" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1160@0.0.1366.728" timestamp="1581788195941" />
-    <state width="1899" height="246" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1160@1366.0.1920.1160" timestamp="1582393608643" />
-    <state width="1022" height="138" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582100906598" />
-    <state width="1022" height="138" key="GridCell.Tab.0.center/0.0.1920.1160/-1366.640.1366.728@0.0.1920.1160" timestamp="1582108052144" />
+    <state width="1899" height="246" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1160@1366.0.1920.1160" timestamp="1582397060541" />
+    <state width="1345" height="246" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1582440948531" />
+    <state width="1432" height="226" key="GridCell.Tab.0.center/0.0.1920.1160/-1366.640.1366.728@0.0.1920.1160" timestamp="1582459261121" />
     <state width="1899" height="174" key="GridCell.Tab.0.center/0.0.1920.1160/1920.0.1366.728@0.0.1920.1160" timestamp="1580983143489" />
     <state width="1899" height="222" key="GridCell.Tab.0.center/3840.425.1366.728/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1580981558893" />
-    <state width="1899" height="246" key="GridCell.Tab.0.left" timestamp="1582393608643">
-      <screen x="1366" y="0" width="1920" height="1160" />
+    <state width="1432" height="226" key="GridCell.Tab.0.left" timestamp="1582459261120">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1899" height="301" key="GridCell.Tab.0.left/-1920.-422.1920.1160/0.0.1366.728@-1920.-422.1920.1160" timestamp="1581252975906" />
     <state width="980" height="229" key="GridCell.Tab.0.left/0.0.1200.1880/-1366.1415.1366.728/1200.559.1920.1160@0.0.1200.1880" timestamp="1580991074037" />
     <state width="1921" height="308" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1160@0.0.1366.728" timestamp="1581788195941" />
-    <state width="1899" height="246" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1160@1366.0.1920.1160" timestamp="1582393608643" />
-    <state width="1022" height="138" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582100906597" />
-    <state width="1022" height="138" key="GridCell.Tab.0.left/0.0.1920.1160/-1366.640.1366.728@0.0.1920.1160" timestamp="1582108052144" />
+    <state width="1899" height="246" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1160@1366.0.1920.1160" timestamp="1582397060541" />
+    <state width="1345" height="246" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1582440948531" />
+    <state width="1432" height="226" key="GridCell.Tab.0.left/0.0.1920.1160/-1366.640.1366.728@0.0.1920.1160" timestamp="1582459261120" />
     <state width="1899" height="174" key="GridCell.Tab.0.left/0.0.1920.1160/1920.0.1366.728@0.0.1920.1160" timestamp="1580983143489" />
     <state width="1899" height="222" key="GridCell.Tab.0.left/3840.425.1366.728/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1580981558893" />
-    <state width="1899" height="246" key="GridCell.Tab.0.right" timestamp="1582393608643">
-      <screen x="1366" y="0" width="1920" height="1160" />
+    <state width="1432" height="226" key="GridCell.Tab.0.right" timestamp="1582459261121">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state width="1899" height="301" key="GridCell.Tab.0.right/-1920.-422.1920.1160/0.0.1366.728@-1920.-422.1920.1160" timestamp="1581252975907" />
     <state width="980" height="229" key="GridCell.Tab.0.right/0.0.1200.1880/-1366.1415.1366.728/1200.559.1920.1160@0.0.1200.1880" timestamp="1580991074037" />
     <state width="1921" height="308" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1160@0.0.1366.728" timestamp="1581788195942" />
-    <state width="1899" height="246" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1160@1366.0.1920.1160" timestamp="1582393608643" />
-    <state width="1022" height="138" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582100906598" />
-    <state width="1022" height="138" key="GridCell.Tab.0.right/0.0.1920.1160/-1366.640.1366.728@0.0.1920.1160" timestamp="1582108052144" />
+    <state width="1899" height="246" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1160@1366.0.1920.1160" timestamp="1582397060541" />
+    <state width="1345" height="246" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1582440948531" />
+    <state width="1432" height="226" key="GridCell.Tab.0.right/0.0.1920.1160/-1366.640.1366.728@0.0.1920.1160" timestamp="1582459261121" />
     <state width="1899" height="174" key="GridCell.Tab.0.right/0.0.1920.1160/1920.0.1366.728@0.0.1920.1160" timestamp="1580983143489" />
     <state width="1899" height="222" key="GridCell.Tab.0.right/3840.425.1366.728/0.0.1920.1160/1920.0.1920.1160@0.0.1920.1160" timestamp="1580981558893" />
     <state x="1827" y="223" key="SettingsEditor" timestamp="1581619215555">
@@ -301,6 +303,10 @@
     </state>
     <state x="-1437" y="-150" key="SettingsEditor/-1920.-422.1920.1160/0.0.1366.728@-1920.-422.1920.1160" timestamp="1581247108937" />
     <state x="1827" y="223" key="SettingsEditor/0.0.1366.728/1366.0.1920.1160@1366.0.1920.1160" timestamp="1581619215555" />
+    <state x="721" y="407" key="SimpleOpenTaskDialog" timestamp="1582447309171">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="721" y="407" key="SimpleOpenTaskDialog/0.0.1920.1160/-1366.640.1366.728@0.0.1920.1160" timestamp="1582447309171" />
     <state x="-1828" y="-330" width="1736" height="976" key="com.intellij.dvcs.ui.CompareBranchesDialog" timestamp="1581248192826">
       <screen x="-1920" y="-422" width="1920" height="1160" />
     </state>
@@ -311,12 +317,12 @@
     <state x="-1153" y="71" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.-422.1920.1160/0.0.1366.728@-1920.-422.1920.1160" timestamp="1581247244638" />
     <state x="2133" y="493" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728/1366.0.1920.1160@1366.0.1920.1160" timestamp="1581348930466" />
     <state x="767" y="493" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1160/-1366.640.1366.728@0.0.1920.1160" timestamp="1581590432876" />
-    <state x="1947" y="101" width="758" height="957" key="find.popup" timestamp="1582382853038">
-      <screen x="1366" y="0" width="1920" height="1160" />
+    <state x="845" y="111" width="758" height="957" key="find.popup" timestamp="1582456372872">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="-1339" y="-321" width="758" height="957" key="find.popup/-1920.-422.1920.1160/0.0.1366.728@-1920.-422.1920.1160" timestamp="1581233143445" />
     <state x="1947" y="101" width="758" height="957" key="find.popup/0.0.1366.728/1366.0.1920.1160@1366.0.1920.1160" timestamp="1582382853038" />
-    <state x="845" y="111" width="758" height="957" key="find.popup/0.0.1920.1160/-1366.640.1366.728@0.0.1920.1160" timestamp="1581862358324" />
+    <state x="845" y="111" width="758" height="957" key="find.popup/0.0.1920.1160/-1366.640.1366.728@0.0.1920.1160" timestamp="1582456372872" />
     <state x="1982" y="270" key="run.anything.popup" timestamp="1581349195224">
       <screen x="1366" y="0" width="1920" height="1160" />
     </state>
@@ -326,11 +332,12 @@
       <screen x="1366" y="0" width="1920" height="1160" />
     </state>
     <state x="1918" y="239" key="scopes/0.0.1366.728/1366.0.1920.1160@1366.0.1920.1160" timestamp="1581009912090" />
-    <state x="1989" y="255" width="672" height="678" key="search.everywhere.popup" timestamp="1582381638536">
-      <screen x="1366" y="0" width="1920" height="1160" />
+    <state x="623" y="255" width="672" height="678" key="search.everywhere.popup" timestamp="1582447320046">
+      <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="-1297" y="-167" width="672" height="678" key="search.everywhere.popup/-1920.-422.1920.1160/0.0.1366.728@-1920.-422.1920.1160" timestamp="1581247329846" />
     <state x="1989" y="255" width="672" height="678" key="search.everywhere.popup/0.0.1366.728/1366.0.1920.1160@1366.0.1920.1160" timestamp="1582381638536" />
     <state x="443" y="160" width="670" height="426" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1581922769318" />
+    <state x="623" y="255" width="672" height="678" key="search.everywhere.popup/0.0.1920.1160/-1366.640.1366.728@0.0.1920.1160" timestamp="1582447320046" />
   </component>
 </project>

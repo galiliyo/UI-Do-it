@@ -51,7 +51,6 @@ export class AuthEffects {
               this.router.navigate(['/todos']);
               return handleAuthentication(resData.userId, resData.token);
             } else {
-              console.log('status not ok', resData);
               return handleLoginError('Wrong User or password');
             }
           })

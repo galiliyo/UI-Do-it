@@ -1,6 +1,10 @@
-<div class="todo-item"   clickOutside
-     (clickOutside)="onSubmitEdit(item.id)"
-     [ngClass]="item.isDone ? 'todo-item--done ' : ''">
+<div
+  class="todo-item"
+  [@divState]="state"
+  clickOutside
+  (clickOutside)="onSubmitEdit(item.id)"
+  [ngClass]="item.isDone ? 'todo-item--done ' : ''"
+>
   <div class="todo-item__title" (click)="onToggleDone(item.id)">
     <form (ngSubmit)="onSubmitEdit(item.id)">
       <input
@@ -12,7 +16,6 @@
         [value]="item.todo"
         [formControl]="editedTodo"
         [readonly]="!inEditMode"
-
       />
     </form>
   </div>

@@ -11,12 +11,12 @@ const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   {
     path: 'login',
-    component: LoginComponent,
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule),
   },
   {
     path: 'todos',
-    component: TodoMainComponent,
-    // loadChildren: () => import('./todos/todos.module').then(m => m.TodosModule),
+    // component: TodoMainComponent,
+    loadChildren: () => import('./todos/todos.module').then(m => m.TodosModule),
     canActivate: [AuthGuard],
     resolve: {
       todo: TodosResolverService,

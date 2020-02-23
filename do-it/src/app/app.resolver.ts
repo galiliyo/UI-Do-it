@@ -14,6 +14,7 @@ import * as fromApp from './store/app.reducer';
 import * as TodosActions from '../app/todos/store/todos.actions';
 import { AuthService } from './auth/auth.service';
 import * as AuthActions from './auth/store/auth.actions';
+import { log } from 'util';
 
 @Injectable({ providedIn: 'root' })
 export class TodosResolverService implements Resolve<Todo[]> {
@@ -27,6 +28,7 @@ export class TodosResolverService implements Resolve<Todo[]> {
   ) {}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    console.log('resolver');
     this.userSub = this.store
       .select('auth')
       .pipe(map(authState => authState.user))

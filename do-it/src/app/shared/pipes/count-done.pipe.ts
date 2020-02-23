@@ -6,7 +6,6 @@ import { Todo } from '../interfaces/todo.interface';
 })
 export class CountDonePipe implements PipeTransform {
   transform(todos: Todo[]) {
-    console.log('1', 1);
     const unDoneCount = todos.filter(todoItem => !todoItem.isDone).length;
     if (unDoneCount === 0) {
       return 'All Done!';

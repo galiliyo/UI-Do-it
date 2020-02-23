@@ -17,12 +17,20 @@ import { CoreModule } from './core.module';
 import { environment } from '../environments/environment';
 import { LoginComponent } from './login/login.component';
 import { TodoMainComponent } from './todos/todo-main.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-  declarations: [LoginComponent, AppComponent, HeaderComponent],
+  declarations: [AppComponent, HeaderComponent],
   imports: [
-    LoginModule,
+    BrowserModule,
+    BrowserAnimationsModule,
     SharedModule,
+    CommonModule,
+    HttpClientModule,
+    LoginModule,
     TodosModule,
     CoreModule,
     AppRoutingModule,

@@ -1,7 +1,7 @@
-import { CountDonePipe } from "./count-done.pipe";
+import { CountDonePipe } from './count-done.pipe';
 
-describe("CountDonePipe", () => {
-  it("create an instance", () => {
+describe('CountDonePipe', () => {
+  it('create an instance', () => {
     const pipe = new CountDonePipe();
     expect(pipe).toBeTruthy();
   });

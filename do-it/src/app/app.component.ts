@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import * as fromApp from './store/app.reducer';
 import { MessageService } from 'primeng/api';
 import * as SharedActions from './store/shared.actions';
+import { log } from 'util';
 
 @Component({
   selector: 'app-root',
@@ -14,16 +15,18 @@ export class AppComponent implements OnInit {
   private error: string = null;
 
   title = 'do-it';
-  loading: boolean;
+  loading: number;
 
   constructor(
     private store: Store<fromApp.AppState>,
     private messageService: MessageService
-  ) {}
+  ) {
+    this.loading = 0;
+  }
 
   ngOnInit(): void {
     this.store.select('shared').subscribe(sharedStated => {
-      this.loading = sharedStated.loading;
+      this.loading = sharedStated.httpCounter;
       this.error = sharedStated.error;
       if (this.error) {
         this.addSingle(this.error);

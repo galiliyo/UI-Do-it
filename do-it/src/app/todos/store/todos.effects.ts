@@ -95,7 +95,6 @@ export class TodosEffects {
   removeTodo = this.actions$.pipe(
     ofType(TodosActions.REMOVE_TODO_REQ),
     switchMap((todo: TodosActions.RemoveTodoReq) => {
-      console.log('todo', todo);
       const id = <any>todo.payload.id;
       return this.http
         .delete<resData>(environment.api + `/todos/${id}`)
